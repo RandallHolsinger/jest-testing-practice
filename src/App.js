@@ -2,20 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const todos = [
+    {id:1, title:'wipe down stuff', completed: true},
+    {id:2, title:'sweep floor', completed: true},
+    {id:3, title:'make food', completed: false}
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <a
-          className="App-link"
-          href="https://jestjs.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Jest and React-Testing-Library
-        </a>
-      </header>
+      {todos.map(todo => {
+          return (<Todo todo={todo}/>)
+        })}
     </div>
   );
 }
